@@ -6,7 +6,7 @@ salir = True
 while (salir):
     try:
         cadena = input("Desea salir? (SALIR): ")
-        if cadena == "SALIR":
+        if cadena.upper() == "SALIR":
             break
         
         num1 = float(input("Numerador: "))
