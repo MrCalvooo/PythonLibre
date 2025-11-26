@@ -1,0 +1,38 @@
+Ejercicio Práctico del Tema 2: Procesador de Transacciones Críticas
+Objetivo: Procesar una lista mixta de transacciones y calcular la suma total de aquellas que son válidas, descartando entradas erróneas y deteniendo el proceso si se encuentra un valor crítico.
+Requisitos del Ejercicio
+Se te proporciona una lista de valores brutos que representan transacciones. Algunos son números válidos, otros son cadenas que deberían ser números, y otros son datos basura ('Error', '34.50', 120, '40', 800, 'invalido', 450, 1500, '35.9').
+1. Variables Iniciales:
+    ◦ Define la lista transacciones_brutas con los valores proporcionados.
+    ◦ Inicializa una variable suma_transacciones_validas a 0.
+    ◦ Define una meta_critica de 500.
+2. Iteración y Bucle (for y range()):
+    ◦ Recorre la lista transacciones_brutas usando un bucle for
+.
+3. Manejo de Errores e ValueError (try-except):
+    ◦ Dentro del bucle, utiliza un bloque try
+ para intentar convertir cada elemento (que es originalmente una str o int) a un número de punto flotante (float)
+.
+    ◦ Si la conversión falla (por ejemplo, al intentar convertir 'Error' o 'invalido' a float), se generará un ValueError
+.
+    ◦ El bloque except ValueError debe capturar este error
+, imprimir un mensaje de advertencia específico (ej. "Dato no numérico encontrado, omitiendo..."), y luego usar la sentencia continue
+ para saltar inmediatamente a la siguiente iteración, ignorando el resto del código del bucle para ese elemento.
+4. Control de Flujo Condicional (if y break):
+    ◦ Si la conversión a float dentro del try es exitosa, se considera que el valor es válido.
+    ◦ Utiliza una sentencia if
+ para comprobar si el valor es mayor o igual a la meta_critica.
+    ◦ Si el valor excede o iguala la meta_critica, debes imprimir un mensaje de alerta (ej. "¡ALERTA! Transacción crítica detectada.") y utilizar la sentencia break
+ para detener la ejecución del bucle por completo y pasar al código posterior.
+5. Acumulación:
+    ◦ Si la transacción es válida (no produjo error) y no es crítica (no activó el break), debes sumar ese valor a suma_transacciones_validas.
+6. Salida Final:
+    ◦ Imprime el resultado final de suma_transacciones_validas después de que el bucle haya terminado (ya sea por completarse o por el break).
+
+--------------------------------------------------------------------------------
+Resumen de los conceptos clave del Tema 2 a aplicar:
+• Flujo Secuencial y Alteración: El orden secuencial del programa se altera con el for
+ y las sentencias break y continue
+.
+• Decisión: Uso de if para decidir si se aplica break.
+• Robustez: Uso de try-except para que el programa no se detenga ante una ValueError

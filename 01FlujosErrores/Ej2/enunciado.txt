@@ -1,0 +1,32 @@
+Ejercicio Práctico del Tema 2: Analizador de Datos y División Segura
+Objetivo: Crear un script robusto que solicite datos repetidamente y realice un cálculo crucial (la división) de forma segura, previniendo fallos de ejecución.
+Requisitos del Ejercicio
+Debes construir un programa que pida al usuario continuamente números para ser utilizados como numerador y denominador, hasta que el usuario decida salir.
+1. Bucle Indefinido y Salida:
+    ◦ Utiliza un bucle while True
+.
+    ◦ En cada iteración, pide al usuario que ingrese la palabra clave "SALIR" para terminar el programa. Si la entrada es "SALIR" (insensible a mayúsculas/minúsculas), usa break para salir del bucle
+.
+2. Entrada de Datos:
+    ◦ Si no es la palabra clave de salida, solicita dos entradas separadas: el numerador y el denominador.
+3. Manejo de ValueError (Entrada No Numérica):
+    ◦ Utiliza un bloque try para intentar convertir ambas entradas a números de punto flotante (float)
+.
+    ◦ Si el usuario ingresa un texto no numérico (ej. "a", "hola"), se lanzará un ValueError
+.
+    ◦ Captura este error con except ValueError, imprime un mensaje de error claro (ej. "Error: Ambas entradas deben ser números.") y utiliza continue para saltar el resto de la iteración y volver a solicitar los datos
+.
+4. Manejo de ZeroDivisionError (Cálculo):
+    ◦ Una vez que tienes los dos números dentro del bloque try (es decir, la conversión fue exitosa), realiza la operación de división.
+    ◦ Si el usuario ingresa 0 como denominador, Python lanzará un ZeroDivisionError
+.
+    ◦ Captura específicamente esta excepción con except ZeroDivisionError
+ e imprime un mensaje indicando que la división por cero no está permitida.
+5. Ejecución Exitosa (else):
+    ◦ Utiliza el bloque else de la estructura try-except
+. Recuerda que este bloque solo se ejecuta si el código dentro del try se completa sin lanzar ninguna excepción
+.
+    ◦ Dentro de else, imprime el resultado de la división con un formato claro.
+6. Bloque finally (Limpieza o Finalización):
+    ◦ Incluye un bloque finally
+ que imprima un mensaje simple al final de cada intento de cálculo (ej. "--- Proceso de verificación terminado. ---"). Recuerda que el bloque finally se ejecuta siempre, haya habido un error (ValueError o ZeroDivisionError) o no
