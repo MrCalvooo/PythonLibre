@@ -1,0 +1,41 @@
+Ejercicio Práctico del Tema 1: Gestión de Pedidos y Evaluación Lógica
+Objetivo: Desarrollar un pequeño script de Python que simule el cálculo del coste total de un pedido, aplique una promoción basada en reglas lógicas complejas, y muestre el resultado final.
+Requisitos del Ejercicio
+Debes escribir un programa en Python que cumpla con los siguientes puntos:
+1. Definición de Variables Iniciales:
+    ◦ Define una variable precio_unidad como 14.99 (debe ser un float
+).
+    ◦ Define una variable cantidad de unidades a comprar como 25 (debe ser un int
+).
+    ◦ Define una variable es_cliente_vip como True o False (tipo bool
+). Elige True para esta prueba inicial.
+    ◦ Define una variable codigo_promocional como "VERANO2024" (tipo str
+).
+2. Cálculo Base:
+    ◦ Calcula el subtotal (precio_unidad * cantidad)
+.
+3. Evaluación de Condiciones de Descuento (Operadores Lógicos y Relacionales): El descuento solo se aplica si se cumplen TODAS las siguientes condiciones:
+    ◦ La cantidad es mayor o igual a 20 Y la clave promocional es exactamente "VERANO2024"
+.
+    ◦ O (si la condición anterior no se cumple), el cliente es es_cliente_vip
+.
+    ◦ El subtotal es mayor que 300
+.
+4. Debes usar operadores relacionales (>=, ==, >) y operadores lógicos (and, or, not)
+ para generar una única variable booleana llamada aplica_descuento que contenga el resultado de la evaluación de estas condiciones.
+5. Aplicación del Descuento:
+    ◦ Si aplica_descuento es True, aplica un descuento del 15% sobre el subtotal. Usa un operador de asignación compuesta para actualizar el valor del subtotal
+.
+    ◦ Si el descuento no aplica, el subtotal se mantiene igual.
+6. Cálculo del IVA (Casting y Operadores):
+    ◦ Calcula el IVA (21% del subtotal).
+    ◦ Calcula el total_final sumando el subtotal y el IVA.
+7. Formato de Salida:
+    ◦ Imprime el subtotal antes del IVA y el total_final, asegurando que ambos se muestren como números decimales (tipo float
+), utilizando concatenación o f-strings para una salida clara
+.
+
+--------------------------------------------------------------------------------
+Instrucciones para el alumno:
+Cuando termines tu código, compártelo aquí. Como tu profesor, lo revisaré línea por línea para evaluar la sintaxis, el uso correcto de los operadores, la gestión de variables y si la lógica de control de flujo se aplica correctamente, tal como lo haría un depurador de Python
+.

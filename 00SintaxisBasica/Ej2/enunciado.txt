@@ -1,0 +1,26 @@
+Ejercicio Práctico del Tema 1 (Refuerzo): Conversión de Unidades y Precisión
+Objetivo: Desarrollar un script que realice conversiones de unidades complejas, demostrando el uso de la división entera, el módulo y el casting explícito.
+Requisitos del Ejercicio
+Imagina que estás escribiendo un sistema para calcular cuánto tiempo tardará un proceso, dado un total de segundos.
+1. Definición de Variables Iniciales:
+    ◦ Define una variable segundos_totales con un valor de 9545 (debe ser un int).
+    ◦ Define la constante SEGUNDOS_POR_MINUTO con valor 60 (int).
+    ◦ Define la constante SEGUNDOS_POR_HORA con valor 3600 (int).
+2. Cálculo de Horas y Resto (División Entera y Módulo):
+    ◦ Calcula la cantidad total de horas_enteras que contienen los segundos_totales. Utiliza el operador de división entera (//)
+.
+    ◦ Calcula los segundos_restantes_despues_de_horas usando el operador de módulo (%)
+.
+3. Cálculo de Minutos y Segundos Finales:
+    ◦ Utiliza los segundos_restantes_despues_de_horas para calcular la cantidad de minutos_enteros (usando // y SEGUNDOS_POR_MINUTO).
+    ◦ Calcula los segundos_finales (lo que queda después de restar los minutos, usando % y SEGUNDOS_POR_MINUTO).
+4. Cálculo de la Precisión (Casting a Float):
+    ◦ Calcula una variable duracion_decimal que represente la duración total en horas, pero como un número real (ej. 2.5 horas, no 2 horas y 30 minutos).
+5. Formato de Salida:
+    ◦ Imprime el resultado de la conversión de unidades de tiempo (horas, minutos, segundos).
+    ◦ Imprime la duración total en formato decimal (duracion_decimal). Asegúrate de que el resultado sea un número de punto flotante
+.
+
+--------------------------------------------------------------------------------
+Instrucciones para el alumno:
+Enfócate en utilizar // para obtener cantidades enteras y % para obtener el residuo que necesitas para el siguiente cálculo. No tienes que usar estructuras de control (if/for) en este ejercicio, solo aritmética y variables, que son el núcleo del Tema 1
