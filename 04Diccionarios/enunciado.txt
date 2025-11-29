@@ -1,0 +1,26 @@
+Objetivo: Crear un sistema que utilice un diccionario para almacenar registros de empleados. La lógica debe ser robusta ante la falta de datos, utilizando las ventajas del método dict.get() en lugar de la indexación directa por corchetes.
+Requisitos del Ejercicio
+I. Datos Iniciales
+Define una estructura de datos en el ámbito global:
+• registro_personal: Un diccionario vacío ({}) para almacenar los registros de rendimiento.
+II. Definición de Funciones
+Debes implementar dos funciones clave:
+1. agregar_registro(nombre_empleado, **detalles)
+• Parámetros: Recibe el nombre_empleado como argumento posicional y, crucialmente, un número arbitrario de argumentos de palabra clave (**detalles)
+.
+• Lógica:
+    ◦ Debe agregar o actualizar el registro del empleado en el diccionario registro_personal (el cual es un tipo de referencia o mutable
+).
+    ◦ Utiliza el nombre del empleado como la clave principal y el diccionario detalles (que contiene ventas, satisfaccion, etc.) como su valor. Puedes usar el método update() para añadir los detalles.
+2. calcular_puntuacion_final(nombre_empleado)
+• Parámetro: Recibe el nombre_empleado.
+• Lógica: Calcula la puntuación total usando la fórmula: (Ventas * 0.6) + (Satisfacción * 0.4).
+    ◦ Manejo Robusto de KeyError: Para obtener los valores de 'ventas' y 'satisfaccion' del diccionario anidado del empleado, debes usar el método dict.get(clave, valor_por_defecto)
+. Esto es vital para la robustez. Si un empleado no tiene registrada la clave 'ventas' o 'satisfaccion', el valor por defecto debe ser 0.
+• Manejo de Empleado Inexistente: Si el nombre_empleado no existe en registro_personal, la función debe imprimir un mensaje de error claro y devolver None.
+III. Ejecución Principal (main())
+1. Llama a agregar_registro() para añadir tres empleados con datos variados.
+    ◦ Ejemplo 1: Juan, con ventas=1500.0 y satisfaccion=8.5.
+    ◦ Ejemplo 2: María, solo con ventas=2500.0 (le faltará la clave satisfaccion).
+    ◦ Ejemplo 3: Luis, solo con satisfaccion=9.0 (le faltará la clave ventas).
+2. Llama a calcular_puntuacion_final() para los tres empleados, y también para un empleado que no existe (ej. 'Pedro').

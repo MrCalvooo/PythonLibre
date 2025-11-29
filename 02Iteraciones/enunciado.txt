@@ -1,0 +1,35 @@
+Objetivo: Utilizar la iteración y las condiciones para analizar un inventario representado por listas paralelas, calcular el valor total y generar una lista de productos que requieren reposición.
+Requisitos del Ejercicio
+Se te proporciona información de inventario en tres listas paralelas.
+1. Definición de Listas Iniciales:
+    ◦ nombres_productos: ["Monitor", "Teclado", "Ratón", "Webcam", "Disco Duro"]
+    ◦ precios: [250.50, 45.99, 12.00, 60.75, 150.99]
+    ◦ stock: 
+2. Cálculo del Valor Total del Inventario:
+    ◦ Inicializa una variable valor_total_inventario a 0.
+    ◦ Utiliza un bucle for con la función range()
+ y la función len() (la cual devuelve la longitud de la secuencia)
+ para iterar simultáneamente sobre las tres listas.
+    ◦ En cada iteración, calcula el valor de cada producto (precio * stock) y acumula el resultado en valor_total_inventario
+.
+3. Filtro de Productos Críticos (Bucle for estándar):
+    ◦ Crea una lista vacía llamada productos_reposicion_normal.
+    ◦ Usando el mismo bucle for con range() y una sentencia if
+, verifica si el stock de un producto es menor o igual a 5.
+    ◦ Si la condición se cumple, añade el nombre del producto a la lista productos_reposicion_normal (puedes usar el método append()
+).
+4. Desafío Adicional: Comprensión de Listas (List Comprehension):
+    ◦ Crea una lista llamada productos_reposicion_compacta utilizando la sintaxis de comprensión de listas
+. Esta lista debe contener los nombres de los productos cuyo stock sea menor o igual a 5.
+5. Formato de Salida:
+    ◦ Imprime el valor_total_inventario (debe ser un float).
+    ◦ Imprime ambas listas de productos críticos (productos_reposicion_normal y productos_reposicion_compacta).
+
+--------------------------------------------------------------------------------
+Conceptos a aplicar:
+• Iteración por Índice: Usar range(len(lista)) para acceder a elementos de listas paralelas
+.
+• Acumuladores y Condicionales: if para filtrar datos y variables para acumular sumas
+.
+• Listas: Creación, indexación
+, y el uso de la comprensión de listas.

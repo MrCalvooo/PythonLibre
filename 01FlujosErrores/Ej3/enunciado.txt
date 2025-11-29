@@ -1,0 +1,28 @@
+Objetivo: Crear una función reutilizable que procese una lista de lecturas de temperatura en bruto, manejando errores de formato y errores lógicos (valores fuera de rango) de forma controlada.
+Requisitos del Ejercicio
+I. Datos Iniciales
+Define una lista de temperaturas en bruto (lecturas_sensor) que contenga datos válidos e inválidos:
+• lecturas_sensor = [25.5, "28.0", 35, "Invalido", 100.1, 15.2, "tres", 42.0]
+• temperaturas_validas = []
+II. Definición de la Función Validadora
+Debes definir la función procesar_lectura(valor_bruto).
+1. Conversión y Captura de ValueError:
+    ◦ Dentro de la función, utiliza un bloque try para intentar convertir el valor_bruto (que puede ser str o int) a un número de punto flotante (float)
+.
+    ◦ Si la conversión falla (ej. si el valor es "Invalido" o "tres"), se lanza un ValueError
+.
+    ◦ Captura el ValueError e imprime un mensaje específico (ej. "Error de formato: El valor no es numérico").
+2. Validación de Rango y raise:
+    ◦ Si la conversión es exitosa, utiliza una sentencia if para verificar la validez lógica: una temperatura es válida solo si está estrictamente entre 0.0 y 50.0 grados (no inclusivo).
+    ◦ Si el valor está fuera de este rango (ej. 100.1), usa la sentencia raise ValueError("Temperatura fuera del rango normal (0.0°C a 50.0°C)") para forzar una excepción con un mensaje personalizado
+.
+3. Retorno Exitoso:
+    ◦ Si el valor pasa la conversión y la validación de rango, la función debe devolver (return) la temperatura limpia como float.
+III. Procesamiento Principal (Bucle for y try-except)
+Utiliza un bucle for para iterar sobre la lista lecturas_sensor.
+1. Llamada a la Función: Llama a procesar_lectura(lectura) dentro de un bloque try.
+2. Captura de Errores de la Función: Usa bloques except para capturar específicamente los errores (ValueError) que la función procesar_lectura puede generar (tanto por el float() fallido como por el raise manual).
+3. Acumulación: Si la llamada a la función es exitosa (es decir, el try se completa sin error y devuelve un valor), añade ese valor a la lista temperaturas_validas
+.
+IV. Salida Final
+Imprime la lista temperaturas_validas y la media de las temperaturas válidas.
