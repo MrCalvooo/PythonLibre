@@ -1,0 +1,75 @@
+Examen Simulación Python (Duración Máxima: 2 Horas)
+SECCIÓN I: Conceptos Teóricos y Fundamentales (1.5 Puntos)
+Pregunta 1: Definiciones Clave (0.5 Puntos)
+Defina brevemente dos de las características principales de Python y explique el concepto de casting.
+1. Tipado Dinámico: El tipo de las variables se determina en tiempo de ejecución, sin necesidad de declararlo explícitamente
+.
+2. Lenguaje Interpretado: El código se ejecuta línea por línea sin necesidad de ser compilado previamente
+.
+3. Casting: Es la especificación explícita de un tipo de dato por parte del programador para almacenar el resultado de una expresión. Esto se realiza mediante "funciones de construcción" como int(), float(), o str()
+,
+.
+Pregunta 2: Mutabilidad en Funciones (1.0 Punto)
+Explique la diferencia en el comportamiento al pasar una lista y un entero como argumentos a una función, relacionándolo con los conceptos de tipos mutables y tipos inmutables
+,,
+.
+• Entero (Tipo Inmutable): Cuando un tipo de valor, como un entero, es pasado a una función, la función recibe una copia de ese valor
+,. Si la función modifica el valor, crea un nuevo espacio en memoria, por lo que el valor original fuera de la función no se ve alterado,. Esto es equivalente a un paso por valor
+.
+• Lista (Tipo Mutable): Cuando un tipo de referencia, como una lista, es pasado a una función, la función recibe una copia de la referencia que apunta al mismo objeto en memoria
+,. Si la función modifica el contenido de la lista (ej. usando append()), la lista original fuera de la función sí se ve modificada,. Esto es equivalente a un paso por referencia
+.
+
+--------------------------------------------------------------------------------
+SECCIÓN II: Control de Flujo, Listas y Comprensión (3.5 Puntos)
+Pregunta 3: Análisis de Notas y Filtros (3.5 Puntos)
+Se tienen las siguientes listas paralelas que representan a un grupo de estudiantes:
+
+nombres = ["Ana", "Beto", "Carlos", "Diana", "Elena", "Felipe"]
+notas = [7.5, 4.0, 9.5, 6.0, 3.5, 8.0]
+
+Debe realizar lo siguiente:
+1. Iteración y Modificación (1.5 Puntos): Utilice un bucle for junto con la función zip() para iterar sobre ambas listas en paralelo
+,
+. Dentro del bucle, incremente en 0.5 puntos la nota de todo estudiante cuya nota original sea mayor o igual a 7.0.
+2. Comprensión de Listas (1.0 Punto): Utilice la comprensión de listas para generar una nueva lista llamada alumnos_aprobados que contenga solo los nombres de los estudiantes que, después de la posible modificación anterior, tienen una nota mayor o igual a 5.0
+,
+.
+3. Resultado (1.0 Punto): Imprima la lista completa de nombres y la lista alumnos_aprobados.
+
+--------------------------------------------------------------------------------
+SECCIÓN III: Funciones, Diccionarios y Robustez (5.0 Puntos)
+Pregunta 4: Calculadora Segura de Inventario (5.0 Puntos)
+Cree un programa robusto para gestionar un inventario simple que consta de un diccionario global. El programa debe utilizar dos funciones: una para agregar stock de forma segura y otra para realizar una consulta protegida contra errores.
+I. Definición de Datos Globales
+
+inventario = {}  # Diccionario global para almacenar productos
+
+II. Función agregar_producto(id_producto, stock_inicial) (2.0 Puntos)
+Defina una función que reciba el ID del producto (un int) y el stock.
+• La función debe utilizar un bloque try-except para intentar convertir el id_producto a entero y el stock_inicial a entero
+,
+.
+• Capture el ValueError si la conversión falla (ej. si el ID es una cadena como "abc"). Si falla, debe imprimir "Error: ID o stock deben ser números enteros." y no modificar el diccionario
+.
+• Si la conversión es exitosa, debe agregar el par id_producto: stock_inicial al diccionario global inventario
+,
+.
+III. Función consultar_stock(id_producto) (3.0 Puntos)
+Defina una función que reciba el ID de un producto.
+• Acceso Robusto (1.5 Puntos): La función debe intentar obtener el stock del id_producto del diccionario inventario. Para garantizar la robustez y evitar KeyError si el producto no existe, debe utilizar el método dict.get()
+. Si la clave no existe, debe devolver el valor por defecto 0.
+• Validación de Tipo (1.0 Punto): Antes de usar get(), asegúrese de que el id_producto es un int (realizando casting si es necesario). Si el id_producto no puede convertirse a entero, debe imprimir un mensaje de error y devolver -1.
+• Retorno (0.5 Puntos): Si el acceso es exitoso, devuelve el valor del stock.
+IV. Ejecución de Prueba
+Llame a las funciones de la siguiente manera:
+1. Carga de datos válidos:
+    ◦ agregar_producto("101", "50")
+    ◦ agregar_producto(202, 10)
+2. Carga de datos inválidos (debe fallar la conversión):
+    ◦ agregar_producto("trescientos", 5)
+3. Consultas:
+    ◦ Consulte un producto que existe (101).
+    ◦ Consulte un producto que no existe (999).
+    ◦ Consulte un ID con formato inválido ("doscientos").
+Resultado esperado: El programa debe imprimir los resultados de las consultas y no detenerse ante ningún error de entrada.
