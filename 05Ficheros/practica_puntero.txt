@@ -1,0 +1,4 @@
+Python es genial
+Aprendiendo a usar seek
+Fin del ejercicio
+Linea 4
